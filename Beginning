@@ -1,0 +1,11 @@
+#read
+library(data.table)
+emp<-fread('employee_reviews.csv')
+
+#inspect
+emp[,.N,company]
+emp[,.N,location]
+emp[company=='google',.('location'=location),location]
+emp[company=='netflix',.('location'=location),location]
+
+
